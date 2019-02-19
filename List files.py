@@ -21,7 +21,7 @@ def change_directory(destination_path):
 
 def create_current_directory_path_list():
     dir_path_list = []
-    current_path = get_current_path(True)
+    current_path = get_current_path(False)
     dir_list = list_current_path_files_and_directories(current_path, False)
 
     for i in range(0, len(dir_list)):
@@ -31,9 +31,19 @@ def create_current_directory_path_list():
 
 
 def split_list_into_directories_and_files(patch_list):
+    directories = []
+    files = []
+
     for patch_no in range (0, len(patch_list)):
-        print(patch_list[patch_no])
+        if os.path.isdir(patch_list[patch_no]):
+            directories.append(patch_list[patch_no])
+        else:
+            files.append(patch_list[patch_no])
+
+    split = (directories, files)
+    return split
 
 
 ona = create_current_directory_path_list()
-split_list_into_directories_and_files(ona)
+eyn = split_list_into_directories_and_files(ona)
+print(eyn)

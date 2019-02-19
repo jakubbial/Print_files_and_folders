@@ -30,5 +30,10 @@ def create_current_directory_path_list():
     return dir_path_list
 
 
+def split_list_into_directories_and_files(patch_list):
+    for patch_no in range (0, len(patch_list)):
+        print(patch_list[patch_no])
+
+
 ona = create_current_directory_path_list()
-print(ona)
+split_list_into_directories_and_files(ona)

@@ -40,10 +40,14 @@ def split_list_into_directories_and_files(patch_list):
         else:
             files.append(patch_list[patch_no])
 
-    split = (directories, files)
-    return split
+    split_patches = {
+        "dir": directories,
+        "fil": files
+    }
+
+    return split_patches
 
 
 ona = create_current_directory_path_list()
 eyn = split_list_into_directories_and_files(ona)
-print(eyn)
+print(eyn["fil"])

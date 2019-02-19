@@ -1,12 +1,16 @@
 import os
 
 
+# Returns working directory path
+
 def get_current_path(do_print):
     current_path = os.getcwd()
     if do_print:
         print(current_path)
     return current_path
 
+
+# Function that changing current working directory
 
 def change_directory(destination_path):
     os.chdir(destination_path)
@@ -34,6 +38,7 @@ def list_path_content(path_to_list):
     return split_patches
 
 
-ona = get_current_path(False)
-eyn = list_path_content(ona)
-print(eyn["dir"])
+aktualna_sciezka = get_current_path(False)
+zawartosc_slownik = list_path_content(aktualna_sciezka)
+print(zawartosc_slownik["dir"])
+print(zawartosc_slownik["fil"])

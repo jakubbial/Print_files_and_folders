@@ -40,5 +40,9 @@ def list_path_content(path_to_list):
 
 aktualna_sciezka = get_current_path(False)
 zawartosc_slownik = list_path_content(aktualna_sciezka)
+#print(zawartosc_slownik["dir"])
+#print(zawartosc_slownik["fil"])
+
+zawartosc_slownik = list_path_content(zawartosc_slownik["dir"][2])
 print(zawartosc_slownik["dir"])
 print(zawartosc_slownik["fil"])

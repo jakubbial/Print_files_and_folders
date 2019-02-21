@@ -21,10 +21,11 @@ def change_directory(destination_path):
 def list_path_content(path_to_list):
     directories = []
     files = []
-    dir_list = os.listdir(path_to_list)
+    directory_content_list = os.listdir(path_to_list)
+#    directories.append(path_to_list)
 
-    for i in range(0, len(dir_list)):
-        dir_path = os.path.join(path_to_list, dir_list[i])
+    for i in range(0, len(directory_content_list)):
+        dir_path = os.path.join(path_to_list, directory_content_list[i])
 
         if os.path.isdir(dir_path):
             directories.append(dir_path)
@@ -38,11 +39,8 @@ def list_path_content(path_to_list):
     return split_patches
 
 
-aktualna_sciezka = get_current_path(False)
-zawartosc_slownik = list_path_content(aktualna_sciezka)
+#aktualna_sciezka = get_current_path(False)
+#zawartosc_slownik = list_path_content(aktualna_sciezka)
+
 #print(zawartosc_slownik["dir"])
 #print(zawartosc_slownik["fil"])
-
-zawartosc_slownik = list_path_content(zawartosc_slownik["dir"][2])
-print(zawartosc_slownik["dir"])
-print(zawartosc_slownik["fil"])

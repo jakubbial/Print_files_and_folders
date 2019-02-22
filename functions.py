@@ -32,10 +32,8 @@ def list_path_content(path_to_list):
         else:
             files.append(dir_path)
 
-    split_patches = {
-        "dir": directories,
-        "fil": files
-    }
+    split_patches = directories
+
     return split_patches
 
 

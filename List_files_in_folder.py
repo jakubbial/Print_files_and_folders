@@ -1,17 +1,35 @@
 import functions
 
 
-def recursion_shit(path_list):
+def list_directories_one(path_list):
+    list = path_list
+    for i in range(0, len(path_list[0])):
+        list = list + (functions.list_path_content(path_list[0][i]))
+        print(list)
 
-    for i in range(0, len(path_list["dir"])):
-        path_list["dir"].append(functions.list_path_content(path_list["dir"][i]))
+    return list
 
-    return path_list
+#pat = "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
+#pat = functions.get_current_path(False)
 
-pat = "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
+#zawartosc_slownik = functions.list_path_content(pat)
+#print(len(zawartosc_slownik[0]))
 
-aktualna_sciezka = functions.get_current_path(True)
-zawartosc_slownik = functions.list_path_content(pat)
-lista_h = recursion_shit(zawartosc_slownik)
+#lista_h = list_directories_one(zawartosc_slownik)
+#print(lista_h)
 
-print(lista_h)
+
+pat = functions.get_current_path(False)
+lis = functions.list_path_content(pat)
+#print(lis)
+
+
+def funcc(path_lol):
+    for i in range (0, len(path_lol)):
+        print("########################### "+ path_lol[i])
+        ten = functions.list_path_content(path_lol[i])
+        print(ten[0])
+
+
+funcc(lis[0])
+

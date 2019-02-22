@@ -10,8 +10,8 @@ def get_current_path(do_print):
     return current_path
 
 
-# Function return dictionary ('dir', 'fil') that contain content of given path
-
+# Argument String path_to_list np. "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
+# Returned split_patches[[directories_list],[files_list]]
 def list_path_content(path_to_list):
     directories = []
     files = []
@@ -25,22 +25,25 @@ def list_path_content(path_to_list):
         else:
             files.append(dir_path)
 
-    split_patches = directories
+    split_patches = [directories, files]
 
     return split_patches
 
 
+# Function argument: path[[directories_list],[files_list]]
 def list_content_of_all_path_folders(path, i):
-    if i == len(path):
+    if i == len(path[0]):
         return path
-
-    path += list_path_content(path[i])
+    lis = list_path_content(path[0][i])
+    path[0] += (lis)[0]
+    path[1] += (lis)[1]
     i += 1
     return list_content_of_all_path_folders(path, i)
 
 
 # pat = [get_current_path(False)]
-pat = ["C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"]
+pat = [["C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"], []]
+# pat = "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
 
 
 oto = list_content_of_all_path_folders(pat, 0)

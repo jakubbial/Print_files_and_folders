@@ -1,4 +1,5 @@
 import os
+import sys
 
 
 # Returns working directory path
@@ -46,11 +47,12 @@ def prepare_path(do_current_path, path):
         pat = [[curr], []]
     else:
         pat = [[path], []]
-
     print(pat)
     return list_content_of_all_path_folders(pat, 0)
 
 
-sciezka = "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
-oto = prepare_path(False, sciezka)
-print(oto)
+if __name__ == "__main__":
+    do_current_path = bool(sys.argv[1])
+    path = str(sys.argv[2])
+    lista = prepare_path(do_current_path, path)
+    print(lista)

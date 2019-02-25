@@ -11,7 +11,7 @@ def get_current_path(do_print):
 
 
 # Argument String path_to_list np. "C:\ABB_repos\PanelTestAutomation\TestCases\AutomaticTests\ACX580"
-# Returned split_patches[[directories_list],[files_list]]
+# Return split_patches[[directories_list],[files_list]]
 def list_path_content(path_to_list):
     directories = []
     files = []
@@ -47,12 +47,13 @@ def prepare_path(do_current_path, path):
         pat = [[curr], []]
     else:
         pat = [[path], []]
-    print(pat)
     return list_content_of_all_path_folders(pat, 0)
 
 
 if __name__ == "__main__":
-    do_current_path = bool(sys.argv[1])
-    path = str(sys.argv[2])
-    lista = prepare_path(do_current_path, path)
+    if len(sys.argv) <= 1:
+        lista = prepare_path(True, "0")
+    else:
+        path = str(sys.argv[1])
+        lista = prepare_path(False, path)
     print(lista)

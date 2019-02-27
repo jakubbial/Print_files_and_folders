@@ -56,4 +56,9 @@ if __name__ == "__main__":
     else:
         path = str(sys.argv[1])
         lista = prepare_path(False, path)
-    print(lista)
+
+
+    print(len(lista))
+    for i in (1, len(lista)):
+        for element in lista[i]:
+            print(element)
